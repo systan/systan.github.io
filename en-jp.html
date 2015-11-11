@@ -3,59 +3,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>シス単Plus</title>
-<style type="text/css">
-.div-horizontal {
-  overflow: hidden;
-  height: 250px;
-}
-.div-horizontal .mask {
-  height: 300px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-}
-.div-horizontal .list {
-  display: inline-table;
-  table-layout: fixed;
-  width: 200%;
-}
-.div-horizontal .list li {
-  display: table-cell;
-}
-.en {
-  background-color: #B3E5FC;
-  border-color: #81D4FA;
-}
-.jp {
-  background-color: #DCEDC8;
-  border-color: #C5E1A5;
-}
-.bold {
-  font-weight: bold;
-}
-body {
-  margin: 0px;
-}
-ul {
-  padding: 0px;
-  margin: 0px;
-}
-li {
-  height: 220px;
-  width: 200%;
-  font-size: 50px;
-  text-align: center;
-  vertical-align: middle;
-  border-style: solid;
-  border-width: 16px;
-}
-</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./common.css">
+<script>
+$(document).ready(function(){
+  //$('#num3').scrollLeft($.cookie('cookie3'));
+  $('div').scroll(function(){
+    $('#out').text('scrollLeft: '+$('#num3').scrollLeft()+' c: '+$.cookie('cookie3'));
+    $.cookie('cookie3', "はん");
+  });
+});
+
+
+</script>
 </head>
 <body>
 <div class="div-horizontal">
   <div class="mask">
     <ul class="list">
-      <li class="en">シス単Plus (開発中 v0.1.4)</li>
+      <li class="en" id="out">シス単Plus (開発中 v0.1.4)</li>
       <li class="jp">不具合など、27HR山内瑞城まで。</li>
     </ul>
   </div>
@@ -77,7 +44,7 @@ li {
   </div>
 </div>
 <div class="div-horizontal">
-  <div class="mask">
+  <div class="mask" id="num3">
     <ul class="list">
       <li class="en"><span class="bold">increase by</span> 20%</li>
       <li class="jp">20%<span class="bold">増加する</span></li>
@@ -252,6 +219,16 @@ li {
     </ul>
   </div>
 </div>
-
+<div class="resAdsense">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Systan -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:980px;height:252px"
+     data-ad-client="ca-pub-4018468243625659"
+     data-ad-slot="1957628526"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 </body>
 </html>
