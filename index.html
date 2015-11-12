@@ -11,11 +11,9 @@ $(function(){
   $.getJSON("./systandata.json", function(data){
     for(var i in data){
       $('#base').append("<div class='div-horizontal'><div class='mask' id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>");
+      $('#cardnum' + i).scrollLeft($.cookie('cookie' + i));
     };
   });
-  for(var i in data){
-    $('#cardnum' + i).scrollLeft($.cookie('cookie' + i));
-  };
   $('div').scroll(function(){
     for(var i in data){
       $.cookie('cookie' + i, $('#cardnum' + i).scrollLeft());
@@ -28,7 +26,7 @@ $(function(){
 <div class="div-horizontal">
   <div class="mask">
     <ul class="list">
-      <li class="en" id="out">シス単Plus (開発中 v0.1.8)</li>
+      <li class="en" id="out">シス単Plus (開発中 v0.1.9)</li>
       <li class="jp">不具合など、27HR山内瑞城まで。</li>
     </ul>
   </div>
