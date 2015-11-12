@@ -10,7 +10,7 @@
 $(function(){
   $.getJSON("./systandata.json", function(data){
     for(var i in data){
-      $('#base').append("<div class=\"div-horizontal\"><div class=\"mask\" id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>");
+      $('#base').append("<div class='div-horizontal'><div class='mask id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>");
     };
   });
   for(var i in data){
