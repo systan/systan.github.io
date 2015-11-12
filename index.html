@@ -13,10 +13,18 @@ $(function(){
   $.getJSON("./systandata.json", function(data){
     for(var i in data){
       $('#base').append("<div class='div-horizontal'><div class='mask' id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>");
+      /*
       $('#cardnum' + 1).scrollLeft($.cookie('cookie' + 1));
       $('div').scroll(function(){
         $.cookie('cookie' + 1, $('#cardnum' + 1).scrollLeft());
         $('#out').text('scrollLeft:' + $.cookie('cookie' + 1) + $('#cardnum' + 1).scrollLeft());
+      });*/
+    };
+    for(var i=1; i<10; i++;){
+      $('#cardnum' + i).scrollLeft($.cookie('cookie' + i));
+      $('div').scroll(function(){
+        $.cookie('cookie' + i, $('#cardnum' + i).scrollLeft());
+        $('#out').text('scrollLeft:' + $.cookie('cookie' + i) + $('#cardnum' + i).scrollLeft());
       });
     };
   });
