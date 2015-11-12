@@ -8,15 +8,16 @@
 <link rel="stylesheet" type="text/css" href="./common.css">
 <script>
 $(function(){
+  var startnum = 1;
+  var endnum = 100;
   $.getJSON("./systandata.json", function(data){
     for(var i in data){
       $('#base').append("<div class='div-horizontal'><div class='mask' id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>");
       $('#cardnum' + i).scrollLeft($.cookie('cookie' + i));
-    };
-  });
-  $('div').scroll(function(){
-    for(var i in data){
-      $.cookie('cookie' + i, $('#cardnum' + i).scrollLeft());
+      $('div').scroll(function(){
+        $.cookie('cookie' + i, $('#cardnum' + i).scrollLeft());
+        $('#out').text('scrollLeft:' + $.cookie('cookie' + i) + $('#cardnum' + i).scrollLeft());
+      });
     };
   });
 });
