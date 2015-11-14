@@ -11,7 +11,7 @@ $(function(){
   $.getJSON("./dekotandata.json", function(data){
     for(var i in data){
       var txt = "<div class='div-horizontal'><div class='mask' id='cardnum" + i +"'><ul class=\"list\"><li class=\"en\">" + data[i].left + "</li><li class=\"jp\">" + data[i].right + "</li></ul></div></div>";
-      $('#base').append(txt.replace(/\(/g,"<span class='bold'>").replace(/\)/g,"</span>"));
+      $('#base').append(txt.replace(/[/g,"<span class='bold'>").replace(/]/g,"</span>"));
     };
   });
 });
