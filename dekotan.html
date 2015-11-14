@@ -2,17 +2,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>シス単Plus</title>
+<title>出古単Plus</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./common.css">
 <script>
 $(function(){
-  //var startnum = 1;
-  //var endnum = 100;
-  $.getJSON("./systandata.json", function(data){
+  $.getJSON("./dekotandata.json", function(data){
     for(var i in data){
-      var txt = "<div class='div-horizontal'><div class='mask' id='cardnum" + data[i].num +"'><ul class=\"list\"><li class=\"en\">" + data[i].en + "</li><li class=\"jp\">" + data[i].jp + "</li></ul></div></div>";
+      var txt = "<div class='div-horizontal'><div class='mask' id='cardnum" + i +"'><ul class=\"list\"><li class=\"en\">" + data[i].left + "</li><li class=\"jp\">" + data[i].right + "</li></ul></div></div>";
       $('#base').append(txt.replace(/\(/g,"<span class='bold'>").replace(/\)/g,"</span>"));
     };
   });
@@ -23,20 +21,11 @@ $(function(){
 <div class="div-horizontal">
   <div class="mask">
     <ul class="list">
-      <li class="en">シス単Plus (開発中 v0.1.10)</li>
+      <li class="en">出古単Plus (開発中 v0.1.10)</li>
       <li class="jp">不具合など、27HR山内瑞城まで。</li>
     </ul>
   </div>
 </div>
 <div id="base"></div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Systan -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:980px;height:252px"
-     data-ad-client="ca-pub-4018468243625659"
-     data-ad-slot="1957628526"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </body>
 </html>
