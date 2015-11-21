@@ -43,7 +43,7 @@
 	{ "num": 39, "left": "時刻tにおける変位", "right": "y = Asinωt = Asin(2πt / T)" },
 	{ "num": 40, "left": "位置xにおける変位(速度が既知)", "right": "y = Asin{2π / T( t - x/v ))" },
 	{ "num": 41, "left": "位置xにおける変位(波長が既知)", "right": "y = Asin(2π( t/T - x/λ ))" },
-	{ "num": 42, "left": "2π(t/t - x/λ)", "right": "位相〔rad〕" },
+	{ "num": 42, "left": "位相", "right": "2π(t/t - x/λ)" },
 	{ "num": 43, "left": "反射の法則", "right": "θ = θ’　(入射角θ、反射角θ’)" },
 	{ "num": 44, "left": "屈折の法則", "right": "sinθ₁/sinθ₂ = v₁/v₂ = λ₁/λ₂ = n₁₂" },
 	{ "num": 45, "left": "音速の公式", "right": "V = 331.5 + 0.6t" },

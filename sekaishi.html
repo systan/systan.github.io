@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>物理期末範囲</title>
+<title>世界史A期末範囲</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./common.css">
 <script>
 $(function(){
-  $.getJSON("./physicsdata.json", function(data){
+  $.getJSON("./sekaishidata.json", function(data){
     for(var i in data){
       var txt = "<div class='div-horizontal'><div class='mask'><ul class='list'><li class='en'>" + data[i].left + "</li><li class='jp'>" + data[i].right + "</li></ul></div></div>";
       $('#base').append(txt);
@@ -21,7 +21,7 @@ $(function(){
 <div class="div-horizontal">
   <div class="mask">
     <ul class="list">
-      <li class="en">物理期末範囲</li>
+      <li class="en">世界史A期末範囲</li>
       <li class="jp">不具合など、27HR山内瑞城まで。</li>
     </ul>
   </div>
