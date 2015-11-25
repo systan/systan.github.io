@@ -34,6 +34,7 @@
 	{ "num": 32, "left": "★『V₁する人[物]もあれば、V₂する人[物]もある』", "right": "Some 〜 V₁, and [while] other V₂" },
 	{ "num": 33, "left": "◆1人でいるのが好きな人もいれば、人といっしょにいるのが好きな人もいる。", "right": "Some people like being alone, and other like being with people." },
 	{ "num": 34, "left": "・some ofを使うときはどういう場合か", "right": "some ofとなるのは後ろにone’s the + 名詞やthemのような代名詞が来る場合" },
+	{ "num": 19, "left": "【3 目的の表現】", "right": "" },
 	{ "num": 35, "left": "★『〜するためにSV』", "right": "S V to (V)" },
 	{ "num": 36, "left": "◆アンはお金をおろしに銀行に行った", "right": "Ann went to the bank to withdraw some money." },
 	{ "num": 37, "left": "・for (V)ingという書き方について", "right": "〜するために、という意味でfor (V)ingということはできない。" },
