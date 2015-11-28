@@ -1,0 +1,116 @@
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotateX(-33.5deg) rotateY(45deg);
+		transform: rotateX(-33.5deg) rotateY(45deg)
+	}
+	10%, to {
+		-webkit-transform: rotateX(-33.5deg) rotateY(225deg);
+		transform: rotateX(-33.5deg) rotateY(225deg)
+	}
+}
+@keyframes slowspin {
+	0% {
+		-webkit-transform: rotateX(-33.5deg) rotateY(45deg);
+		transform: rotateX(-33.5deg) rotateY(45deg)
+	}
+	10%, to {
+		-webkit-transform: rotateX(-33.5deg) rotateY(225deg);
+		transform: rotateX(-33.5deg) rotateY(225deg)
+	}
+}
+ul {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 40px
+}
+li {
+	display: list-item;
+	text-align: -webkit-match-parent
+}
+.cube {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: -50px 0;
+	-webkit-transform-origin: 50px 50px;
+	transform-origin: 50px 50px;
+	-webkit-transform: rotateX(-33.5deg) rotateY(45deg);
+	transform: rotateX(-33.5deg) rotateY(45deg);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-animation: slowspin 10s ease-in-out infinite 2s;
+	animation: slowspin 10s ease-in-out infinite 2s;
+	margin: -50px 0 0 -50px;
+	top: 50%;
+	left: 50%
+}
+.cube, .cube li {
+	position: absolute;
+	display: block
+}
+.cube li {
+	width: 75pt;
+	height: 75pt;
+	transition: -webkit-transform 1s ease-in-out;
+	transition: transform 1s ease-in-out
+}
+.cube .back, .cube .front, .cube .left, .cube .right, .cube .top {
+	background: radial-gradient(transparent 30%, rgba(16, 47, 91, .2) 100%)
+}
+.cube li:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 75pt;
+	height: 75pt;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background-color: rgba(126, 169, 232, .5);
+	transition: -webkit-transform 1s ease-in-out;
+	transition: transform 1s ease-in-out
+}
+.cube .front {
+	-webkit-transform: translateZ(50px);
+	transform: translateZ(50px)
+}
+.cube .back {
+	-webkit-transform: rotateX(-180deg) translateZ(50px);
+	transform: rotateX(-180deg) translateZ(50px)
+}
+.cube .right {
+	-webkit-transform: rotateY(90deg) translateZ(50px);
+	transform: rotateY(90deg) translateZ(50px)
+}
+.cube .left {
+	-webkit-transform: rotateY(-90deg) translateZ(50px);
+	transform: rotateY(-90deg) translateZ(50px)
+}
+.cube .top {
+	-webkit-transform: rotateX(90deg) translateZ(50px);
+	transform: rotateX(90deg) translateZ(50px)
+}
+.cube .top:after {
+	background-color: rgba(152, 186, 237, .5)
+}
+.cube .bottom {
+	-webkit-transform: rotateX(-90deg) translateZ(50px);
+	transform: rotateX(-90deg) translateZ(50px)
+}
+.cube .floor:after {
+	display: none
+}
+.cube .floor {
+	box-shadow: -300px 0 50px rgba(0, 0, 0, .3);
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+	width: 110px;
+	height: 110px;
+	left: 295px;
+	background-color: transparent;
+	-webkit-transform: rotateX(-90deg) translateZ(60px);
+	transform: rotateX(-90deg) translateZ(60px)
+}
