@@ -14,14 +14,17 @@ $(function(){
       $('#base').append(txt);
     };
   });
-  for (var i=1 ; i<=10 ; i++){
+  for(var i=1; i<=10; i++){
     $('#num'+i).scrollLeft($.cookie('cookie'+i));
   }
   $('div').scroll(function(){
-    for (var i=1 ; i<=10 ; i++){
+    for(var i=1; i<=10; i++){
       $.cookie('cookie'+i, $('#num'+i).scrollLeft());
     }
+    $('#out').text('scrollLeft: '+$('#num3').scrollLeft()+' c: '+$.cookie('cookie3'));
   });
+});
+
 });
 </script>
 </head>
@@ -29,7 +32,7 @@ $(function(){
 <div class="div-horizontal">
   <div class="mask">
     <ul class="list">
-      <li class="en">物理期末範囲</li>
+      <li class="en" id="out">物理期末範囲</li>
       <li class="jp">不具合など、27HR山内瑞城まで。</li>
     </ul>
   </div>

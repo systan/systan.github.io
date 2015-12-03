@@ -15,6 +15,7 @@ $(document).ready(function(){
     for (var i=1 ; i<=10 ; i++){
       $.cookie('cookie'+i, $('#num'+i).scrollLeft());
     }
+    $('#out').text($.cookie('cookie'+i)+'/'+$('#num'+i).scrollLeft())
   });
 });
 </script>
