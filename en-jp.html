@@ -8,13 +8,17 @@
 <link rel="stylesheet" type="text/css" href="./common.css">
 <script>
 $(document).ready(function(){
-  //$('#num3').scrollLeft($.cookie('cookie3'));
+  $('#num1').scrollLeft($.cookie('cookie1'));
+  $('#num2').scrollLeft($.cookie('cookie2'));
+  $('#num3').scrollLeft($.cookie('cookie3'));
+  $('#num4').scrollLeft($.cookie('cookie4'));
   $('div').scroll(function(){
-    $('#out').text('scrollLeft: '+$('#num3').scrollLeft()+' c: '+$.cookie('cookie3'));
-    $.cookie('cookie3', "はん");
+    $.cookie('cookie1', $('#num1').scrollLeft());
+    $.cookie('cookie2', $('#num2').scrollLeft());
+    $.cookie('cookie3', $('#num3').scrollLeft());
+    $.cookie('cookie4', $('#num4').scrollLeft());
   });
 });
-$
 </script>
 </head>
 <body>
