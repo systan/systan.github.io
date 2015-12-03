@@ -10,7 +10,7 @@
 $(function(){
   $.getJSON("./physicsdata.json", function(data){
     for(var i in data){
-      var txt = "<div class='div-horizontal' id='num" + 1 + "'><div class='mask'><ul class='list'><li class='en'>" + data[i].left + "</li><li class='jp'>" + data[i].right + "</li></ul></div></div>";
+      var txt = "<div class='div-horizontal' id='num" + i + "'><div class='mask'><ul class='list'><li class='en'>" + data[i].left + "</li><li class='jp'>" + data[i].right + "</li></ul></div></div>";
       $('#base').append(txt);
     };
   });
