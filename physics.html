@@ -17,7 +17,7 @@ $(function(){
   for(var i=1; i<=10; i++){
     $('#num'+i).scrollLeft($.cookie('cookie'+i));
   }
-  $('num3').scroll(function(){
+  $('ul').scroll(function(){
     for(var i=1; i<=10; i++){
       $.cookie('cookie'+i, $('#num'+i).scrollLeft());
     }
