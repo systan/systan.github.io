@@ -14,6 +14,9 @@ $(function(){
       $('body').append(txt);
     };
   });
+  for (var i=0; i<=2; i++){
+    $('#num'+i).scrollLeft($.cookie('cookie'+i));
+  }
   $('.mask').scroll(function(){
     for(var i=0; i<=2; i++){
       $.cookie('cookie'+i, $('#num'+i).scrollLeft());
