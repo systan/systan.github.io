@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="./common.css">
 <script>
 $(function(){
-  $.getJSON("./testdata.json", function(data){
+  $.getJSON('./' + $.query.get('id') + '.json', function(data){
     for(var i in data){
       var txt = "<div class='horizontal'><div class='mask' id='num" + i + "'><ul class='list'><li class='left'>" + data[i].left + "</li><li class='right'>" + data[i].right + "</li></ul></div></div>";
       $('body').append(txt);
