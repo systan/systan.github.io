@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>確認チェックカード</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="http://www.pohjolaguild.com/cdn/wp-includes/js/jquery/jquery.query.js"></script>
+<link rel="stylesheet" type="text/css" href="./common.css">
+<script>
+$(function(){
+  $.getJSON('./' + $.query.get('id') + '.json', function(data){
+    for(var i in data){
+      var txt = "<div class='horizontal'><div class='mask' id='num" + i + "'><ul class='list'><li class='left'>" + data[i].left + "</li><li class='right'>" + data[i].right + "</li></ul></div></div>";
+      $('body').append(txt);
+    };
+  });
+  for (var i=0; i<=2; i++){
+    $('#num'+i).scrollLeft($.cookie('cookie'+i));
+  }
+  $('.mask').scroll(function(){
+    for(var i=0; i<=2; i++){
+      $.cookie('cookie'+i, $('#num'+i).scrollLeft());
+    }
+  });
+});
+</script>
+</head>
+<body>
+<div class="div-horizontal">
+  <div class="mask">
+    <ul class="list">
+      <li class="en" id="out">確認チェックカード</li>
+      <li class="jp">不具合など、27HR山内瑞城まで。</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
