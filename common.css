@@ -1,26 +1,26 @@
-.div-horizontal {
+.horizontal {
   overflow: hidden;
   height: 250px;
 }
-.div-horizontal .mask {
+.horizontal .mask {
   height: 300px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
 }
-.div-horizontal .list {
+.horizontal .list {
   display: inline-table;
   table-layout: fixed;
   width: 200%;
 }
-.div-horizontal .list li {
+.horizontal .list li {
   display: table-cell;
 }
-.en {
+.left {
   background-color: #B3E5FC;
   border-color: #81D4FA;
 }
-.jp {
+.right {
   background-color: #DCEDC8;
   border-color: #C5E1A5;
 }
