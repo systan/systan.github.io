@@ -1,0 +1,14 @@
+.popupImage{
+	position:relative;
+	display:block;
+}
+.popupImage span.loupe{
+	position:absolute;
+	right:0;
+	bottom:0;
+	display: block;
+	width:25px;
+	height:25px;
+	background:url(/ats-static/img/common/IconZoom.png) no-repeat 100% 100%;	
+	cursor:pointer;
+}

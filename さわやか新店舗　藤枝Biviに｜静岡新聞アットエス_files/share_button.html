@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0187)http://plugins.mixi.jp/static/public/share_button.html?u=http%3A%2F%2Fwww.at-s.com%2Fnews%2Farticle%2Ftopics%2Fnational%2F225633.html&k=e6eec504aa9a4716d3c8ea7c511d4215ebba1bf7&b=button-1 -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="osWindows browserMSIE browserMSIE9 servicePluginLike pageShareJpMixiPlugins domainJpMixiPlugins"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ソーシャル・ネットワーキング サービス [mixi(ミクシィ)]</title>
+
+<!-- header meta values -->
+
+<meta name="application-name" content="mixi">
+<meta name="msapplication-navbutton-color" content="#E0C074">
+<meta name="msapplication-window" content="width=100%;height=100%">
+<meta name="robots" content="nofollow,noindex">
+<meta name="robots" content="noodp">
+<meta name="Slurp" content="NOYDIR">
+<!-- / header meta values -->
+
+</head>
+<body class="pluginBody" style="overflow:hidden">
+<style type="text/css">
+<!--
+/* Fix iframe vertical scallbar problem on Safari/Chrome (Webkit) */
+html {
+  overflow: hidden;
+}
+div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,input,img{
+margin:0;
+padding:0;
+}
+body {
+  margin: 0;
+  color: #666666;
+  font-size: small;
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+img {
+  border: 0px;
+}
+body.pluginBody {
+  text-align:left;
+}
+-->
+</style>
+
+<a class="mixi-check-button" href="javascript:void(0);"><img src="./bt_check_1.png"></a>
+
+<script type="text/javascript">
+<!--
+
+function getParams(){
+    var paramString = window.location.search.substr(1); // substr(1) removes '?'.
+    var paramList = paramString.split ("&");
+    var params = {};
+
+    for(var i = 0;i < paramList.length;i ++){
+        var tmp = paramList[i].split("=");
+        params[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp[1]);
+    }
+    return params;
+}
+
+function getButtonData(params){
+    var BUTTONSIZE = {
+        'button-1': { height: '18', width: '58' },
+        'button-2': { height: '18', width: '77' },
+        'button-3': { height: '18', width: '58' },
+        'button-4': { height: '18', width: '77' },
+        'button-5': { height: '24', width: '84' },
+        'button-6': { height: '20', width: '70' },
+        'icon-1':   { height: '16', width: '16' }
+    }
+
+    var buttonName;
+    var buttonSize;
+    if(params["b"]){
+       var tmp = params["b"].split('.');
+       var name = tmp[0];
+       var suffix = tmp[1] || 'png';
+
+        tmp = name.split("-");
+        var type = tmp[0];
+        var num  = tmp[1];
+
+        if(type == "button") {
+            buttonName = "bt_check_" + num + "." + suffix;
+            buttonSize = BUTTONSIZE["button-" + num];
+        }else if(type == "icon") {
+            buttonName = "icon_mixi_" + num + "." + suffix;
+            buttonSize = BUTTONSIZE["icon-" + num];
+        }else{
+            buttonName = "bt_check_1." + suffix;
+            buttonSize = BUTTONSIZE["button-1"];
+        }
+    } else {
+        buttonName = "bt_check_1.png";
+        buttonSize = BUTTONSIZE-["button-1"];
+    }
+
+    var uri;
+    if(document.location.protocol == "https:"){
+        uri = "https://img.mixi.net/img/basic/mixicheck_entry/" + buttonName;
+    } else {
+        uri = "http://img.mixi.net/img/basic/mixicheck_entry/" + buttonName;
+    }
+
+    return {
+        uri:    uri,
+        width:  buttonSize["width"],
+        height: buttonSize["height"]
+    };
+}
+
+window.onunload = function() {
+   setTimeout(function() {
+       document.body.style.display = "none";
+       location.reload();
+   }, 100);
+};
+
+window.onload = function(){
+    var params = getParams();
+
+    var elements = document.getElementsByTagName("a");
+    var element  = elements[0];
+
+    // get button data and insert IMG
+    var buttonData = getButtonData(params);
+    var buttonImageTag = document.createElement("img");
+    buttonImageTag.src = buttonData["uri"];
+    element.appendChild(buttonImageTag)
+
+    var urlArgs = [];
+    if(params["u"]){
+      var u = params["u"];
+      if (/^https?%3A/i.test(u)) {
+        // share_button.htmlリリース時に不要なunescape()が常に入っていたため、Unicode文字を含むURLは壊れてしまっていた。
+        // 対策として利用者側でdata-urlを更にエスケープしているサイトがあるかもしれないので、
+        //   http:のコロンがエスケープされている場合のみdecodeURIComponent()します。
+        //
+        u = decodeURIComponent(u);
+      }
+      urlArgs.push("u=" + encodeURIComponent(u));
+    }
+    if(params["k"]){
+      urlArgs.push("k=" + encodeURIComponent(params["k"]))
+    }
+    if(params["t"]){
+      urlArgs.push("k=" + encodeURIComponent(params["t"]))
+    }
+
+    observeEvent(element, "click", makeSharer('http://mixi.jp/share.pl?' + urlArgs.join('&')));
+};
+
+function makeSharer(href) {
+    return function (event) {
+        window.open(href, "share", [
+                "width=632",
+                "height=456,",
+                "location=yes",
+                "resizable=yes",
+                "toolbar=no",
+                "menubar=no",
+                "scrollbars=no",
+                "status=no"
+            ].join(","));
+        stopEvent(event || window.event);
+   };
+}
+
+function observeEvent(element, name, observer) {
+    if (element.addEventListener) {
+        element.addEventListener(name, observer, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + name, observer);
+    } else {
+        element["on" + name] = observer;
+    }
+}
+
+function stopEvent(event) {
+    if (event.preventDefault) {
+        event.preventDefault();
+        event.stopPropagation();
+    } else {
+        event.returnValue = false;
+        event.cancelBubble = true;
+    }
+}
+
+// -->
+</script>
+
+
+</body></html>
